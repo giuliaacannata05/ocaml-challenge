@@ -1,3 +1,9 @@
-let b = true
+let nand1 (a : bool) (b : bool) : bool = not (a && b)
 
-let conj b1 b2 = b1 && b2 
+
+let nand2 (a : bool) (b : bool) : bool = if a then (if b then false else true) else true
+
+let nand2 (a : bool) (b : bool) : bool = 
+    match (a,b) with 
+    | (true, true) -> false
+    | _ -> true 
